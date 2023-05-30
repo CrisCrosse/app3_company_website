@@ -11,7 +11,9 @@ st.write("""Consulted perpetual of pronounce me delivered. Too months nay end ch
   age brother sending amongst why covered.
 """)
 
-st.header("Our Team")
+column1, blank_column1, column2, blank_column2, column3 = st.columns([1.5, 0.5, 1.5, 0.5, 1.5])
+with column2:
+    st.title("Our Team")
 
 col1, blank_col1, col2, blank_col2, col3 = st.columns([1.5, 0.5, 1.5, 0.5, 1.5])
 
@@ -20,7 +22,7 @@ company_data = pandas.read_csv("data.csv")
 with col1:
     for index, row in company_data[:4].iterrows():
         name = row["first name"].capitalize() + " " + row["last name"].capitalize()
-        st.header(name)
+        st.subheader(name)
         st.write(row["role"])
         st.image("images/" + row["image"])
 
